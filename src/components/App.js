@@ -1,19 +1,22 @@
 import video from "../data/video.js";
+import VideoDetails from "./VideoDetails.js";
+import CommentsSection from "./CommentsSection.js";
 
 function App() {
   console.log("Here's your data:", video);
 
   return (
     <div className="App">
-      <iframe
-        width="919"
-        height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameBorder="0"
-        allowFullScreen
-        title="Thinking in React"
-      />
+      {/* //////// video component with title and like section ////////
+       video, title, views & date, like & dislike buttons */}
+      <VideoDetails details={video}/>
+      <br/>
+      
+      {/* //////// commentsSection component contains comment component ////////
+       hide & show comments button, pr, no. of comments, comments (user name and text) */}
+      <CommentsSection comments={video.comments}/>
     </div>
+   
   );
 }
 
